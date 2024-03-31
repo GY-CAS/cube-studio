@@ -1,0 +1,83 @@
+import { AxiosResponse } from 'axios'
+import axios, { AxiosResFormat } from '.'
+import { IADUGTemplateInfo, IAppHeaderItem, IAppMenuItem, ICustomDialog } from './interface/kubeflowInterface'
+
+export const getAppMenu = (): Promise<AxiosResponse<IAppMenuItem[]>> => {
+    return axios.get('/myapp/menu')
+}
+
+export const getAppHeaderConfig = (): Promise<AxiosResponse<IAppHeaderItem[]>> => {
+    return axios.get('/myapp/navbar_right')
+}
+
+export const userLogout = (): Promise<AxiosResponse<IAppMenuItem[]>> => {
+    return axios.get('/logout')
+}
+
+export const getADUGTemplateApiInfo = (url?: string, id?: string): Promise<AxiosResponse<IADUGTemplateInfo>> => {
+    return axios.get(`${url || ''}_info`, {
+        params: {
+            id
+        }
+    })
+}
+
+// 从服务器获取一个自定义对话框（Custom Dialog）的配置或数据。通过传递特定的URL和一个信号对象，
+//可以取消正在进行的请求，这在用户交互过程中很有用，例如，当用户导航到一个新页面时，可以取消之前的请求以避免不必要的数据传输和资源浪费。
+export const getCustomDialog = (url: string, signal: AbortSignal): Promise<AxiosResponse<ICustomDialog>> => {
+    return axios.get(`/myapp/feature/check?url=${url}`, { signal })
+}
+
+export const getADUGTemplateList = (url?: string, params?: any): AxiosResFormat<any> => {
+    return axios.get(url || '', { params })
+}
+
+export const getADUGTemplateDetail = (url: string): AxiosResFormat<any> => {
+    return axios.get(`${url}`, {
+        params: {
+            form_data: JSON.stringify({
+                str_related: 1
+            })
+        }
+    })
+}
+
+export const actionADUGTemplateAdd = (url?: string, params?: {}): AxiosResFormat<any> => {
+    return axios.post(url || '', params)
+}
+
+export const actionADUGTemplateUpdate = (url?: string, params?: {}): AxiosResFormat<any> => {
+    return axios.put(url || '', params)
+}
+
+export const actionADUGTemplateDelete = (url?: string, params?: {}): AxiosResFormat<any> => {
+    return axios.delete(url || '', { params })
+}
+
+export const actionADUGTemplateSingle = (url?: string): AxiosResFormat<any> => {
+    return axios.get(url || '')
+}
+
+export const actionADUGTemplateMuliple = (url?: string, params?: { ids: any[] }): AxiosResFormat<any> => {
+    return axios.post(url || '', params)
+}
+
+export const actionADUGTemplateDownData = (url: string): AxiosResFormat<any> => {
+    return axios.get(url)
+}
+
+export const actionADUGTemplateRetryInfo = (url: string, params: any): Promise<AxiosResponse<IADUGTemplateInfo>> => {
+    return axios.get(url, { params })
+}
+
+export const actionADUGTemplateChartOption = (url?: string, params?: {}): Promise<any> => {
+    return axios.get(url || '', { params })
+}
+
+export const actionADUGTemplateFavorite = (url?: string, params?: {}): AxiosResFormat<any> => {
+    return axios.post(url || '', params)
+}
+
+export const actionADUGTemplateCancelFavorite = (url?: string, params?: {}): AxiosResFormat<any> => {
+    return axios.delete(url || '', { params })
+}

@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "./static/css/main.da4d3238.css",
+    "main.js": "./static/js/main.80a74800.js",
+    "static/js/805.4ce9edfd.chunk.js": "./static/js/805.4ce9edfd.chunk.js",
+    "static/js/469.a164b910.chunk.js": "./static/js/469.a164b910.chunk.js",
+    "static/js/700.3470c7c9.chunk.js": "./static/js/700.3470c7c9.chunk.js",
+    "static/js/596.5a294394.chunk.js": "./static/js/596.5a294394.chunk.js",
+    "static/css/336.e0406715.chunk.css": "./static/css/336.e0406715.chunk.css",
+    "static/js/336.2403e4af.chunk.js": "./static/js/336.2403e4af.chunk.js",
+    "static/js/485.ac3bc6b6.chunk.js": "./static/js/485.ac3bc6b6.chunk.js",
+    "json.worker.js": "./json.worker.js",
+    "editor.worker.js": "./editor.worker.js",
+    "static/media/codicon.ttf": "./static/media/codicon.00aa018e3ae78d50160b.ttf",
+    "static/media/app.less": "./static/media/app.19417ded74a0a5cf7e37.less",
+    "index.html": "./index.html"
+  },
+  "entrypoints": [
+    "static/css/main.da4d3238.css",
+    "static/js/main.80a74800.js"
+  ]
+}
